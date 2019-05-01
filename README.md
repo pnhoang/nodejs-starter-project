@@ -8,11 +8,6 @@ The purpose of this document is to define a common coding guideline.
 
 It can reformat the whole file, or the whole repository using a command, or integrates directly into the editor to reformat on save, or with git hooks, we can also run scripts to reformat all the committed files.
 
-Example PRs with all the code reformatted with Prettier:
-
--   https://github.com/adviqo-GmbH/AdvisorTool/pull/320
--   https://github.com/adviqo-GmbH/AdvisorTool/pull/321
-
 ## ESLint
 
 [ESLint](https://eslint.org/) helps us to identify potential errors in the code after we write them, errors that Prettier can not identify, for example, assigning values to a variable that comes from a parameter in a function, and many more.
@@ -28,3 +23,9 @@ Most of the team already agrees on using [Yarn](https://yarnpkg.com/en/) as the 
 ## VSCode integration
 
 Enable Prettier to format on save in [VSCode](https://github.com/prettier/prettier-vscode), it can cause less headache to think about how you write your code, should it be a single quote or a double quote, should it contain a bracket or not in an arrow function. those questions we don't have to think about with a Code formatter like Prettier.
+
+## Git Hooks
+
+Git hooks can be used to run scripts on committing or pushing to a remote repository.
+
+We would like to reformat all files of a commit before actually committing. Normally the script will not have to do anything if we already have format on Save in our editor. This is just an extra step to ensure that our remote repository has the same code formatting for everyone that happens to not use the function Format on Save of the editor.
