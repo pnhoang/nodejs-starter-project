@@ -18,7 +18,7 @@ It can reformat the whole file, or the whole repository using a command, or inte
 
 ## Yarn
 
-Most of the team already agrees on using [Yarn](https://yarnpkg.com/en/) as the dependencies management tool, so let's also use Yarn for any new React repository created.
+We use [Yarn](https://yarnpkg.com/en/) as the dependencies management tool.
 
 ## VSCode integration
 
@@ -27,5 +27,6 @@ Enable Prettier to format on save in [VSCode](https://github.com/prettier/pretti
 ## Git Hooks
 
 Git hooks can be used to run scripts on committing or pushing to a remote repository.
+[Husky](https://github.com/typicode/husky) can help us setup different types of hooks.
 
 We would like to reformat all files of a commit before actually committing. Normally the script will not have to do anything if we already have format on Save in our editor. This is just an extra step to ensure that our remote repository has the same code formatting for everyone that happens to not use the function Format on Save of the editor.
