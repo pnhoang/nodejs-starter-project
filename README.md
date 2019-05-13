@@ -1,6 +1,6 @@
 # Introduction
 
-The purpose of this document is to define a common coding guideline.
+Node.js starter application, includes all necessary setup to quickly start your Node.js project
 
 ## Introducing Prettier
 
