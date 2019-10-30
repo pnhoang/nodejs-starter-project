@@ -1,5 +1,5 @@
 const config = {
-    dbUrl: 'mongodb://localhost:27017/starter-db',
+    dbUrl: process.env.MONGO_URL,
 }
 
 export default {

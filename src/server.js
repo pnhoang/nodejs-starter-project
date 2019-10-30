@@ -14,8 +14,8 @@ app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
-app.get('/hello', (_, res) => {
-    res.send('hello world')
+app.get('/ping', (req, res) => {
+    res.send('pong')
 })
 
 export const start = async () => {

@@ -1,0 +1,23 @@
+version: "3"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    restart: on-failure
+    depends_on:
+      - mongo
+    env_file:
+      - .env
+    ports:
+      - "4000:4000"
+      - "9229:9229"
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
