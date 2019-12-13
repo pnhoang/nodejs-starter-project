@@ -11,7 +11,9 @@ let api
 
 jest.mock('./utils/db', () => {
   return {
-    connect: jest.fn(),
+    connect: jest.fn(() => {
+      return 'bar'
+    }),
   }
 })
 
@@ -31,6 +33,13 @@ describe('smoke test', () => {
   })
 
   it('should not connect to db but call the mock connect function', () => {
-    expect(connect.mock.calls).toHaveLength(1)
+    const { mock } = connect
+    expect(mock.calls).toHaveLength(1)
+    expect(mock.results[0]).toMatchInlineSnapshot(`
+      Object {
+        "type": "return",
+        "value": "bar",
+      }
+    `)
   })
 })

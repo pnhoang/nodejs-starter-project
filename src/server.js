@@ -20,7 +20,7 @@ export const start = async () => {
       res.send('pong')
     })
 
-    await connect()
+    await connect('foo')
 
     return new Promise(resolve => {
       const server = app.listen(config.port, () => {
