@@ -1,31 +1,31 @@
 {
-    "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "jest": true,
-        "node": true
-    },
-    "plugins": ["prettier", "jest"],
-    "rules": {
-        "jsx-a11y/href-no-hash": ["off"],
-        "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
-        "no-console": "off",
-        "import/prefer-default-export": "off",
-        "max-len": [
-            "warn",
-            {
-                "code": 100,
-                "tabWidth": 4,
-                "comments": 100,
-                "ignoreComments": false,
-                "ignoreTrailingComments": true,
-                "ignoreUrls": true,
-                "ignoreStrings": true,
-                "ignoreTemplateLiterals": true,
-                "ignoreRegExpLiterals": true
-            }
-        ]
-    }
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "plugins": ["jest"],
+  "rules": {
+    "jsx-a11y/href-no-hash": ["off"],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "no-console": "off",
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "warn",
+      {
+        "code": 100,
+        "tabWidth": 2,
+        "comments": 100,
+        "ignoreComments": false,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ]
+  }
 }

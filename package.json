@@ -1,81 +1,83 @@
 {
-    "name": "starter",
-    "description": "Node.js starter application",
-    "version": "0.0.1",
-    "author": "pnhoang@gmail.com",
-    "main": "index.js",
-    "scripts": {
-        "build": "babel src --out-dir dist",
-        "build:debug": "babel src --out-dir dist --source-maps",
-        "test": "NODE_ENV=testing jest",
-        "test-silent": "NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
-        "dev": "nodemon --exec yarn restart:inspect",
-        "restart:inspect": "rimraf dist && yarn build:debug && yarn start:inspect",
-        "restart": "rimraf dist && yarn build && yarn start",
-        "start:inspect": "node --require dotenv/config --inspect=0.0.0.0:9229 dist/index.js",
-        "start": "node --require dotenv/config dist/index.js",
-        "pre-commit": "sh ./hooks/pre-commit.sh"
-    },
-    "dependencies": {
-        "body-parser": "^1.19.0",
-        "cors": "^2.8.5",
-        "cuid": "^2.1.6",
-        "dotenv": "^8.0.0",
-        "express": "^4.16.4",
-        "jsonwebtoken": "^8.5.1",
-        "lodash": "^4.17.11",
-        "mongoose": "^5.5.7",
-        "morgan": "^1.9.1",
-        "validator": "^10.11.0"
-    },
-    "devDependencies": {
-        "@babel/cli": "^7.4.4",
-        "@babel/core": "^7.4.4",
-        "@babel/plugin-proposal-class-properties": "^7.4.4",
-        "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
-        "@babel/preset-env": "^7.4.4",
-        "babel-core": "^6.26.3",
-        "babel-eslint": "^10.0.1",
-        "babel-jest": "^24.8.0",
-        "eslint": "^5.16.0",
-        "eslint-config-airbnb": "^17.1.0",
-        "eslint-config-prettier": "^4.2.0",
-        "eslint-friendly-formatter": "^4.0.1",
-        "eslint-loader": "^2.1.2",
-        "eslint-plugin-import": "^2.17.2",
-        "eslint-plugin-jest": "^22.5.1",
-        "eslint-plugin-jsx-a11y": "^6.2.1",
-        "eslint-plugin-node": "^9.0.1",
-        "eslint-plugin-prettier": "^3.0.1",
-        "eslint-plugin-promise": "^4.1.1",
-        "eslint-plugin-react": "^7.12.4",
-        "husky": "^2.1.0",
-        "jest": "^24.8.0",
-        "mock-req-res": "^1.1.0",
-        "nodemon": "^1.19.0",
-        "prettier": "^1.17.0",
-        "rimraf": "^2.6.3",
-        "supertest": "^4.0.2"
-    },
-    "keywords": [
-        "calling",
-        "phone"
-    ],
-    "license": "private",
-    "husky": {
-        "hooks": {
-            "pre-commit": "yarn pre-commit",
-            "pre-push": ""
-        }
-    },
-    "jest": {
-        "verbose": true,
-        "testURL": "http://localhost/",
-        "testEnvironment": "node",
-        "setupTestFrameworkScriptFile": "<rootDir>/test-db-setup.js",
-        "testPathIgnorePatterns": [
-            "dist/"
-        ],
-        "restoreMocks": true
+  "name": "starter",
+  "description": "Node.js starter application",
+  "version": "0.0.1",
+  "author": "pnhoang@gmail.com",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "build:debug": "babel src --out-dir dist --source-maps",
+    "test": "NODE_ENV=testing jest",
+    "test:debug": "node --inspect-brk=0.0.0.0:9230 node_modules/.bin/jest --runInBand",
+    "test-silent": "NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
+    "dev": "nodemon --exec yarn restart:inspect",
+    "restart:inspect": "rimraf dist && yarn build:debug && yarn start:inspect",
+    "restart": "rimraf dist && yarn build && yarn start",
+    "start:inspect": "node --require dotenv/config --inspect=0.0.0.0:9229 dist/index.js",
+    "start": "node --require dotenv/config dist/index.js",
+    "pre-commit": "sh ./hooks/pre-commit.sh"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cuid": "^2.1.6",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.5.7",
+    "morgan": "^1.9.1",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^2.1.0",
+    "jest": "^24.8.0",
+    "mock-req-res": "^1.1.0",
+    "nodemon": "^1.19.0",
+    "prettier": "^1.17.0",
+    "rimraf": "^2.6.3",
+    "supertest": "^4.0.2"
+  },
+  "keywords": [
+    "calling",
+    "phone"
+  ],
+  "license": "private",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit",
+      "pre-push": ""
     }
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "testEnvironment": "node",
+    "setupTestFrameworkScriptFile": "<rootDir>/test-db-setup.js",
+    "testPathIgnorePatterns": [
+      "dist/"
+    ],
+    "restoreMocks": true
+  }
 }
